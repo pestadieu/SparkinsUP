@@ -14,11 +14,9 @@ void loop()
     bool vibration = digitalRead(vibration_pin);
     if (last_vibration != vibration)
     {
-        if (button) {
-            /*led_state = (led_state + 1) % 4;
-            analogWrite(led_pin, led_state * 0x3f);*/
-			led_state = (led_state + 1);
-            analogWrite(led_pin, led_state);
+        if (vibration) {
+            led_state = (led_state + 1) % 4;
+            analogWrite(led_pin, led_state * 0x3f);
         }
         delay(100);
     }
